@@ -41,7 +41,7 @@ public class MenuRumahSakit {
         System.out.println("4. Tagihan dan pembayaran");
         System.out.println("5. Jadwalkan kontrol");
         System.out.println("6. Ubah data pasien");
-        System.out.println("0. Keluar");
+        System.out.println("7. Keluar");
     }
 
     private void daftarkanPasien() {

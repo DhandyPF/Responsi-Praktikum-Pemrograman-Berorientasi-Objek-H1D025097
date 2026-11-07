@@ -30,3 +30,6 @@ java Main.java
 
 ### 6. Ubah Data Pasien
 ![img6.png](img6.png)
+
+### 7. Keluar
+![img7.png](img7.png)
