@@ -11,6 +11,6 @@ cd ./Responsi
 java Main.java
 ```
 
-## Screenshot Luaran
+## Screenshot
 ![img.png](img.png)
 ![img2.png](img2.png)
