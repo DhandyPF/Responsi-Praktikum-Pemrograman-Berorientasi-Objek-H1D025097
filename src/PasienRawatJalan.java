@@ -62,8 +62,19 @@ public class PasienRawatJalan extends Pasien implements Administrasi, Penjadwala
                 + " | Lunas: " + sudahBayar);
     }
 
-    public int getJumlahKunjungan() { return jumlahKunjungan; }
-    public void setJumlahKunjungan(int n) { this.jumlahKunjungan = n; }
-    public double getBiayaKonsultasi() { return biayaKonsultasi; }
-    public void setBiayaKonsultasi(double b) { this.biayaKonsultasi = b; }
+    public int getJumlahKunjungan() {
+        return jumlahKunjungan;
+    }
+
+    public void setJumlahKunjungan(int n) {
+        this.jumlahKunjungan = n;
+    }
+
+    public double getBiayaKonsultasi() {
+        return biayaKonsultasi;
+    }
+    
+    public void setBiayaKonsultasi(double b) {
+        this.biayaKonsultasi = b;
+    }
 }

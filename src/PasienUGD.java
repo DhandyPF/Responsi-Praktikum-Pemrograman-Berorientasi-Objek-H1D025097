@@ -46,8 +46,19 @@ public class PasienUGD extends Pasien implements Administrasi {
         System.out.println("   ICU: " + masukICU + " | Biaya tindakan Rp" + biayaTindakan);
     }
 
-    public boolean isMasukICU() { return masukICU; }
-    public void setMasukICU(boolean masukICU) { this.masukICU = masukICU; }
-    public double getBiayaTindakan() { return biayaTindakan; }
-    public void setBiayaTindakan(double b) { this.biayaTindakan = b; }
+    public boolean isMasukICU() {
+        return masukICU;
+    }
+
+    public void setMasukICU(boolean masukICU) {
+        this.masukICU = masukICU;
+    }
+
+    public double getBiayaTindakan() {
+        return biayaTindakan;
+    }
+
+    public void setBiayaTindakan(double b) {
+        this.biayaTindakan = b;
+    }
 }

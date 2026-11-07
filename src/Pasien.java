@@ -32,13 +32,39 @@ public abstract class Pasien {
 
     public abstract void prosesPerawatan();
 
-    public String getNoRekamMedis() { return noRekamMedis; }
-    public String getNama() { return nama; }
-    public void setNama(String nama) { this.nama = nama; }
-    public int getUmur() { return umur; }
-    public void setUmur(int umur) { this.umur = umur; }
-    public int getTingkatKeparahan() { return tingkatKeparahan; }
-    public void setTingkatKeparahan(int t) { this.tingkatKeparahan = Math.max(0, Math.min(10, t)); }
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getNoRekamMedis() {
+        return noRekamMedis;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public int getUmur() {
+        return umur;
+    }
+
+    public void setUmur(int umur) {
+        this.umur = umur;
+    }
+
+    public int getTingkatKeparahan() {
+        return tingkatKeparahan;
+    }
+
+    public void setTingkatKeparahan(int t) {
+        this.tingkatKeparahan = Math.max(0, Math.min(10, t));
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

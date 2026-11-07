@@ -49,8 +49,19 @@ public class PasienRawatInap extends Pasien implements Administrasi {
         System.out.println("   Lama inap: " + lamaInap + " hari | Tagihan Rp" + hitungBiaya());
     }
 
-    public int getLamaInap() { return lamaInap; }
-    public void setLamaInap(int lamaInap) { this.lamaInap = lamaInap; }
-    public double getTarifKamarPerHari() { return tarifKamarPerHari; }
-    public void setTarifKamarPerHari(double t) { this.tarifKamarPerHari = t; }
+    public int getLamaInap() {
+        return lamaInap;
+    }
+
+    public void setLamaInap(int lamaInap) {
+        this.lamaInap = lamaInap;
+    }
+
+    public double getTarifKamarPerHari() {
+        return tarifKamarPerHari;
+    }
+
+    public void setTarifKamarPerHari(double t) {
+        this.tarifKamarPerHari = t;
+    }
 }
