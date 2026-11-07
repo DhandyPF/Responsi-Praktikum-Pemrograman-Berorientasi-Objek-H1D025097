@@ -12,4 +12,5 @@ java Main.java
 ```
 
 ## Screenshot Luaran
-(tempel screenshot hasil `java Main` di sini)
+![img.png](img.png)
+![img2.png](img2.png)

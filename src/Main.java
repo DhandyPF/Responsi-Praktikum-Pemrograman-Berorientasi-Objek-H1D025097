@@ -1,58 +1,67 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== 1. State dan Behavior ===");
-        PasienRawatInap inap = new PasienRawatInap("RM001", "Budi", 7, 450000.0);
-        inap.tampilkanData();
-        System.out.println("Budi kritis? " + inap.isKritis());
+        PasienRawatJalan p1 = new PasienRawatJalan("RM001", "Siti");
+        System.out.println("Nama: " + p1.getNama());
+        System.out.println("Keparahan: " + p1.getTingkatKeparahan());
+        p1.tampilkanData();
+        System.out.println("Kritis: " + p1.isKritis());
 
         System.out.println("\n=== 2. Immutability ===");
-        System.out.println("Biaya pendaftaran (konstanta): " + Pasien.BIAYA_PENDAFTARAN);
-        System.out.println("No rekam medis (final): " + inap.getNoRekamMedis());
+        System.out.println("Biaya pendaftaran: " + Pasien.BIAYA_PENDAFTARAN);
+        System.out.println("Nomor rekam medis: " + p1.getNoRekamMedis());
 
         System.out.println("\n=== 3. Enkapsulasi dan Overloading ===");
-        PasienRawatJalan jalan = new PasienRawatJalan("RM002", "Siti");
-        PasienRawatJalan jalanMahal = new PasienRawatJalan("RM003", "Andi", 250000.0);
-        System.out.println("Biaya konsultasi default: " + jalan.getBiayaKonsultasi());
-        System.out.println("Biaya konsultasi custom: " + jalanMahal.getBiayaKonsultasi());
-        jalan.setUmur(29);
-        System.out.println("Umur Siti setelah setter: " + jalan.getUmur());
+        PasienRawatJalan p2 = new PasienRawatJalan("RM002", "Budi", 250000.0);
+        System.out.println("Biaya konsultasi default: " + p1.getBiayaKonsultasi());
+        System.out.println("Biaya konsultasi custom: " + p2.getBiayaKonsultasi());
+        p1.setUmur(29);
+        System.out.println("Umur setelah diubah: " + p1.getUmur());
 
-        System.out.println("\n=== 4, 5, 6. Inheritance, Super Chaining, Overriding ===");
-        PasienUGD ugd = new PasienUGD("RM004", "Rina");
-        jalan.tampilkanData();
-        ugd.tampilkanData();
+        System.out.println("\n=== 4. Inheritance ===");
+        PasienRawatInap inap = new PasienRawatInap("RM003", "Dewi", 7, 450000.0);
+        PasienUGD ugd = new PasienUGD("RM004", "Fajar");
+        System.out.println("Pasien rawat inap termasuk pasien: " + (inap instanceof Pasien));
+        System.out.println("Pasien rawat jalan termasuk pasien: " + (p1 instanceof Pasien));
+        System.out.println("Pasien UGD termasuk pasien: " + (ugd instanceof Pasien));
 
-        System.out.println("\n=== 7, 8. Abstract Class dan Logika State ===");
-        Pasien[] semua = {inap, jalan, ugd};
-        for (Pasien p : semua) {
-            p.prosesPerawatan();
-        }
+        System.out.println("\n=== 5. Super Chaining ===");
+        System.out.println("Umur dari pasien: " + inap.getUmur());
+        inap.tampilkanData();
+
+        System.out.println("\n=== 6. Overriding ===");
         inap.prosesPerawatan();
-        inap.prosesPerawatan();
-        System.out.println("Pasien rawat jalan dengan keparahan tinggi:");
-        jalanMahal.setTingkatKeparahan(6);
-        jalanMahal.prosesPerawatan();
-        for (Pasien p : semua) {
-            p.tampilkanData();
+        p1.prosesPerawatan();
+        ugd.prosesPerawatan();
+
+        System.out.println("\n=== 7. Abstract Class ===");
+        Pasien pasien = new PasienUGD("RM005", "Kiki", 9);
+        System.out.println("Pasien umum tidak bisa dibuat langsung");
+        System.out.print("Hasil perawatan: ");
+        pasien.prosesPerawatan();
+
+        System.out.println("\n=== 8. Logika State Percabangan ===");
+        PasienRawatInap lina = new PasienRawatInap("RM006", "Lina", 7, 450000.0);
+        for (int i = 1; i <= 3; i++) {
+            System.out.print("Proses " + i + " (keparahan " + lina.getTingkatKeparahan() + "): ");
+            lina.prosesPerawatan();
         }
+        System.out.println("Status akhir: " + lina.getStatus());
 
         System.out.println("\n=== 9. Polimorfisme Interface ===");
-        Administrasi a1 = new PasienRawatInap("RM005", "Dewi");
-        Administrasi a2 = new PasienRawatJalan("RM006", "Eko");
-        Administrasi a3 = new PasienUGD("RM007", "Fajar", 5);
-        Administrasi[] tagihan = {a1, a2, a3};
-        for (Administrasi a : tagihan) {
-            System.out.println("Tagihan: Rp" + a.hitungBiaya());
-        }
-        a1.bayar(100000.0);
-        a2.bayar(500000.0);
+        Administrasi a1 = new PasienRawatInap("RM007", "Maya");
+        Administrasi a2 = new PasienRawatJalan("RM008", "Nanda");
+        Administrasi a3 = new PasienUGD("RM009", "Omar", 5);
+        System.out.println("Biaya rawat inap: Rp" + a1.hitungBiaya());
+        System.out.println("Biaya rawat jalan: Rp" + a2.hitungBiaya());
+        System.out.println("Biaya UGD: Rp" + a3.hitungBiaya());
 
         System.out.println("\n=== 10. Multiple Interface ===");
-        Penjadwalan jadwal = new PasienRawatJalan("RM008", "Gita");
+        PasienRawatJalan putri = new PasienRawatJalan("RM010", "Putri");
+        Administrasi adm = putri;
+        Penjadwalan jadwal = putri;
         jadwal.jadwalkanKontrol("15 Desember 2026");
-        System.out.println("Jadwal: " + jadwal.getJadwalKontrol());
-        Administrasi adm = (Administrasi) jadwal;
+        System.out.println("Jadwal kontrol: " + jadwal.getJadwalKontrol());
         System.out.println("Biaya: Rp" + adm.hitungBiaya());
-        System.out.println("PasienRawatJalan bertipe Administrasi dan Penjadwalan sekaligus");
     }
 }
