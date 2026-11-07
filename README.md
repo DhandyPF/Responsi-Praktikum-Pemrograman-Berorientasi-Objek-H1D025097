@@ -14,22 +14,22 @@ java Main.java
 
 ## Screenshot
 ### 1. Pendaftaran Pasien Baru
-![img.png](img.png)
+![img.png](Dokumentasi/img.png)
 
 ### 2. Melihat Daftar Pasien
-![img2.png](img2.png)
+![img2.png](Dokumentasi/img2.png)
 
 ### 3. Proses Perawatan Pasien
-![img3.png](img3.png)
+![img3.png](Dokumentasi/img3.png)
 
 ### 4. Tagihan dan Pembayaran
-![img4.png](img4.png)
+![img4.png](Dokumentasi/img4.png)
 
 ### 5. Penjadwalan Kontrol
-![img5.png](img5.png)
+![img5.png](Dokumentasi/img5.png)
 
 ### 6. Ubah Data Pasien
-![img6.png](img6.png)
+![img6.png](Dokumentasi/img6.png)
 
 ### 7. Keluar
-![img7.png](img7.png)
+![img7.png](Dokumentasi/img7.png)
