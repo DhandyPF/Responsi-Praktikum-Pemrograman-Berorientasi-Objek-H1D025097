@@ -7,7 +7,7 @@
 
 ## Compile dan Run
 ```
-cd ./Responsi/src
+cd ./src
 javac *.java
 java Main.java
 ```
